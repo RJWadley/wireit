@@ -8,6 +8,17 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## Unreleased
 
+### Changed
+
+- **[BREAKING]** Node 18 is no longer supported because it has reached
+  end-of-life. Node 20 is now the oldest supported version. See
+  https://github.com/nodejs/Release#release-schedule.
+
+  Note we will no longer issue breaking semver increments for changes to
+  supported Node versions.
+
+### Fixed
+
 - HTTP errors from the GitHub Actions cache service are no longer ever fatal,
   and should always continue gracefully with GitHub Actions caching temporarily
   disabled (previously only network errors and HTTP 429/503 errors failed
@@ -136,7 +147,7 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Changed
 
-- **[BREAKING]** Node 14 and Node 16 are no longer supported. Node 14 is past its end of life and Node 16 will be shortly. See the Node Release Schedule here:https://github.com/nodejs/Release#release-schedule. Node 18 will be supported until April 2025.
+- **[BREAKING]** Node 14 and Node 16 are no longer supported. Node 14 is past its end of life and Node 16 will be shortly. See the Node Release Schedule here: https://github.com/nodejs/Release#release-schedule. Node 18 will be supported until April 2025.
 
 ## [0.12.0] - 2023-09-01
 

@@ -9,8 +9,8 @@ jobs:
     strategy:
       matrix:
         include:
-          - node: 20 # LTS
-            os: ubuntu-22.04
+          - node: 22 # Active LTS
+            os: ubuntu-24.04
 
     runs-on: ${{ matrix.os }}
 

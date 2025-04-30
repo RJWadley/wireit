@@ -383,12 +383,12 @@ name: Tests
 on: [push, pull_request]
 jobs:
   tests:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
-          node-version: 18
+          node-version: 22
           cache: npm
 
       # Set up GitHub Actions caching for Wireit.
@@ -948,8 +948,8 @@ input also affects the fingerprint:
 
 Wireit is supported on Linux, macOS, and Windows.
 
-Wireit is supported on Node Current (22), Active LTS (20), and Maintenance LTS
-(18). See [Node releases](https://nodejs.org/en/about/releases/) for the
+Wireit is supported on Node Current (23), Active LTS (22), and Maintenance LTS
+(20). See [Node releases](https://nodejs.org/en/about/releases/) for the
 schedule.
 
 Wireit scripts can be launched via `npm`, `node --run`, `pnpm`, and `yarn`.
