@@ -126,6 +126,7 @@ const DEFAULT_LOCKFILES: Record<Agent, string[]> = {
 
 function isValidWireitScriptCommand(command: string): boolean {
   return (
+    /^(npx|pnpx|pnpm dlx|bunx|dx) wireit$/.test(command) ||
     command === 'wireit' ||
     command === 'yarn run -TB wireit' ||
     // This form is useful when using package managers like yarn or pnpm which
@@ -526,8 +527,9 @@ export class Analyzer {
           script: placeholder,
           diagnostic: {
             message:
-              `This command should just be "wireit", ` +
-              `as this script is configured in the wireit section.`,
+              `This command should be "wireit" or a package manager ` +
+              `runner like "npx wireit", as this script is configured ` +
+              `in the wireit section.`,
             severity: 'warning',
             location: {
               file: packageJson.jsonFile,
